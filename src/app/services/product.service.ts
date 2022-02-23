@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { Product } from '../common/product';
 
 @Injectable({
@@ -13,6 +14,7 @@ private baseUrl = 'http://localhost:8080/api/products';
   constructor(private httpClient: HttpClient) { }
 
 
+  //Returns an observable map the JSON data from Spring to product array
   getProductList(): Observable<Product[]> {
     return this.httpClient.get<GetResponse>(this.baseUrl).pipe(
       map(response => response._embedded.products)

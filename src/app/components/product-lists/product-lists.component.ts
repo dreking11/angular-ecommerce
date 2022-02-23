@@ -4,7 +4,9 @@ import { ProductService } from 'src/app/services/product.service';
 
 @Component({
   selector: 'app-product-lists',
-  templateUrl: './product-lists.component.html',
+  templateUrl: './product-list-grid.component.html',
+  //templateUrl: './product-list-table.component.html',
+  //templateUrl: './product-lists.component.html',
   styleUrls: ['./product-lists.component.css']
 })
 export class ProductListsComponent implements OnInit {

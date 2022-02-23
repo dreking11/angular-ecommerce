@@ -1,0 +1,32 @@
+<table class="table">
+
+    <thead class="thead-dark">
+        <tr>
+            <th></th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let tempProduct of products">
+            <td class="align-middle">
+                <img src="{{ tempProduct.imageUrl }}" height="50"/>
+            </td>
+            <td class="align-middle">{{ tempProduct.name}}</td>
+            <td class="align-middle">{{ tempProduct.unitPrice | currency:'USD'}}</td>
+            <td class="align-middle">{{ tempProduct.description}}</td>
+        </tr>
+
+    </tbody>
+</table>
+
+
+
+
+
+<!-- //Accessing from the component based on call from service.
+<p *ngFor="let tempProduct of products">
+    {{tempProduct.name}}: {{tempProduct.unitPrice | currency:'USD'}}
+</p> -->

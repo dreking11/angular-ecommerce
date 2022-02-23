@@ -4,23 +4,23 @@
   <aside class="menu-sidebar d-none d-lg-block">
     <div class="logo">
       <a href="#">
-        <img src="assets/images/logo.png" alt="luv2shop" class="img-responsive">
+        <img src="assets/images/logo.png" alt="king closet" class="img-responsive">
       </a>
     </div>
     <div class="menu-sidebar-content js-scrollbar1">
       <nav class="navbar-sidebar">
         <ul class="list-unstyled navbar-list">
           <li>
-            <a href="#">Books</a>
+            <a routerLink="/category/1" routerLinkActive="active-link">Shoes</a>
           </li>
           <li>
-            <a href="#">Coffee Mugs</a>
+            <a routerLink="/category/2" routerLinkActive="active-link">T-shirts</a>
           </li>
           <li>
-            <a href="#">Mouse Pads</a>
+            <a href="#">Sox</a>
           </li>
           <li>
-            <a href="#">Luggage Tags</a>
+            <a href="#">Jeans</a>
           </li>
         </ul>
       </nav>
@@ -54,7 +54,7 @@
     <!-- END HEADER DESKTOP-->
 
     <!-- MAIN CONTENT-->
-    <app-product-lists> </app-product-lists>
+    <router-outlet></router-outlet>
 
   </div>
 </div>

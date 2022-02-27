@@ -24,6 +24,17 @@ private baseUrl = 'http://localhost:8080/api/products';
     
   }
 
+  getProductListPaginate(thePage: number, 
+                      thePageSize: number,
+                      theCategoryId:number): Observable<GetResponseProducts> {
+
+    // need to build URL based on category id, page and size
+    const searchUrl = `${this.baseUrl}/search/findByCategoryId?id=${theCategoryId}`
+                     + `&page=${thePage}&size=${thePageSize}`;
+
+    return this.httpClient.get<GetResponseProducts>(searchUrl);
+  }
+
   //Returns an observable map the JSON data from Spring to product array
   getProductList(theCategoryId: number): Observable<Product[]> {
 
@@ -42,6 +53,17 @@ private baseUrl = 'http://localhost:8080/api/products';
     return this.getProducts(searchUrl);
   }
 
+  searchProductsPaginate(thePage: number, 
+                      thePageSize: number,
+                      theKeyword:string): Observable<GetResponseProducts> {
+
+// need to build URL based on keyword id, page and size
+const searchUrl = `${this.baseUrl}/search/findByNameContaining?name=${theKeyword}`
+               + `&page=${thePage}&size=${thePageSize}`;
+
+return this.httpClient.get<GetResponseProducts>(searchUrl);
+}
+
   private getProducts(searchUrl: string): Observable<Product[]> {
     return this.httpClient.get<GetResponseProducts>(searchUrl).pipe(
       map(response => response._embedded.products)
@@ -59,6 +81,12 @@ private baseUrl = 'http://localhost:8080/api/products';
 interface GetResponseProducts {
   _embedded: {
     products: Product[];
+  },
+  page: {
+    size: number,
+    totalElements: number,
+    totalPages: number,
+    number: number
   }
 }
 

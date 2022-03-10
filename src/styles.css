@@ -1,3 +1,8 @@
+/* 
+ * ----------------------------
+ * Common CSS
+ * ----------------------------
+ */
 
  *{
     margin:0;
@@ -129,7 +134,7 @@ aside.menu-sidebar.d-none.d-lg-block.clr{
  */
 
 .header-desktop{
-    background:navy;
+    background: goldenrod;
     -webkit-box-shadow:0 2px 5px 0 rgba(0,0,0,.1);
     -moz-box-shadow:0 2px 5px 0 rgba(0,0,0,.1);
     box-shadow:0 2px 5px 0 rgba(0,0,0,.1);
@@ -714,13 +719,15 @@ table.table.table-bordered th{
     font-weight:800;
     color:#0da8e4
 }
+
 .detail-section{
     margin-top:60px
 }
 
-.detail-img {
+.detail-img{
     width: 30%;
 }
+
 /**/
 
 /* 
